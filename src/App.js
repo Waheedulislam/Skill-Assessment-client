@@ -4,6 +4,7 @@ import Home from './Components/Add-btn/Home';
 import ShowTask from './Components/Add-btn/ShowTask';
 import Header from './Components/Header/Header';
 import Login from './Components/Login/Login';
+import NotFound from './Components/Login/NotFound';
 import Register from './Components/Login/Register';
 import RequairAuth from './Components/Login/RequairAuth';
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/show" element={<RequairAuth><ShowTask /></RequairAuth>} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
     </div>
   );

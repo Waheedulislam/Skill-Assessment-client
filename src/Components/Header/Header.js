@@ -20,9 +20,9 @@ const Header = () => {
                     <Link class="nav-link active" aria-current="page" to="/show">Show Task</Link>
                 </li>
                 <li class="nav-item">
-                    {/* {
-                        user:<Link class="nav-link active" aria-current="page" to="/Login">Login</Link>
-                    } */}
+                    <Link class="nav-link active" aria-current="page" to="/show">complete</Link>
+                </li>
+                <li class="nav-item">
                     {
 
                         user ?
