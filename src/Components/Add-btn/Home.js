@@ -24,14 +24,14 @@ const Home = () => {
             })
     }
     return (
-        <div className='text-center  w-50 mx-auto'>
-            <h1 className='text-center text-primary'>Please Add a tasks</h1>
-            <form onSubmit={handleTak}>
+        <div className='text-center' >
+            <h1 className='text-success pt-4'>Please Add a tasks</h1>
+            <form onSubmit={handleTak} className='w-50 mx-auto'>
                 <input className='mb-2' type="text" name="name" placeholder='Your Name' id="" required />
                 <br />
                 <input className='mb-2' type="text" name="description" placeholder='Short Description' id="" />
                 <br />
-                <input className='mb-2' type="submit" value="Submit" />
+                <input className='mb-2 btn btn-primary' type="submit" value=" ADD Task" />
             </form>
         </div>
     );
