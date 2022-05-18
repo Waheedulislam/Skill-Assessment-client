@@ -8,7 +8,7 @@ const Home = () => {
             description: event.target.description.value,
         }
 
-        const url = `http://localhost:5000/item`;
+        const url = `https://mighty-taiga-80971.herokuapp.com/item`;
         fetch(url, {
             method: 'POST',
             headers: {

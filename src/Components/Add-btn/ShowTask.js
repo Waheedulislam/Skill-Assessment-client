@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const ShowTask = () => {
     const [items, setItems] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/item`
+        const url = `https://mighty-taiga-80971.herokuapp.com/item`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -14,7 +14,7 @@ const ShowTask = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure want to delete ?')
         if (proceed) {
-            const url = `http://localhost:5000/item/${id}`
+            const url = `https://mighty-taiga-80971.herokuapp.com/item/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
@@ -29,7 +29,7 @@ const ShowTask = () => {
     return (
 
         <div className='text-center'>
-            <h1 >task: {items.length}</h1>
+            <h1 >Task: {items.length}</h1>
             <div className='pt-5'>
                 {
                     items.map(item => <ul key={item._id}>
