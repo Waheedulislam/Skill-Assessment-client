@@ -14,7 +14,7 @@ const ShowTask = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure want to delete ?')
         if (proceed) {
-            const url = `https://lit-fjord-75870.herokuapp.com/item/${id}`
+            const url = `http://localhost:5000/item/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
