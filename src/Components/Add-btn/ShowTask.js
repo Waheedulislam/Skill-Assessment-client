@@ -10,15 +10,32 @@ const ShowTask = () => {
                 setItems(data)
             })
     }, [])
+
+    const handleDelete = id => {
+        const proceed = window.confirm('Are you sure want to delete ?')
+        if (proceed) {
+            const url = `https://lit-fjord-75870.herokuapp.com/item/${id}`
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    const uiDelete = items.filter(item => item._id !== id);
+                    setItems(uiDelete);
+                })
+        }
+    }
     return (
 
         <div className='text-center'>
             <h1 >task: {items.length}</h1>
             <div className='pt-5'>
                 {
-                    items.map(item => <ul>
+                    items.map(item => <ul key={item._id}>
                         <hr />
-                        <li className='d-flex justify-content-center align-items-center'><h5 className='pt-2 pe-2'>Name:</h5> {item.name} <h5 className='pt-2 ms-3 me-2'>Description:</h5> {item.description}<button className='btn-danger ms-3'>Delete</button></li>
+                        <li className='d-flex justify-content-center align-items-center'><h5 className='pt-2 pe-2'>Name:</h5> {item.name} <h5 className='pt-2 ms-3 me-2'>Description:</h5> {item.description}
+                            <button onClick={() => handleDelete(item._id)} className='btn-danger ms-3'>Delete</button></li>
                         <hr />
 
                     </ul>)
