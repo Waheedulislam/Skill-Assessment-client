@@ -34,7 +34,7 @@ const ShowTask = () => {
                 {
                     items.map(item => <ul key={item._id}>
                         <hr />
-                        <li className='d-flex justify-content-center align-items-center'><h5 className='pt-2 pe-2'>Name:</h5> {item.name} <h5 className='pt-2 ms-3 me-2'>Description:</h5> {item.description}
+                        <li className='d-flex justify-content-center align-items-center'><h5 className='pt-2 pe-2' >Name:</h5> <h6 className='pt-2' style={{ textDecorationLine: 'line-through', textDecorationStyle: 'solid' }}>{item.name}</h6> <h5 className='pt-2 ms-3 me-2'>Description:</h5> <h6 className='pt-2' style={{ textDecorationLine: 'line-through', textDecorationStyle: 'solid' }}>{item.description}</h6>
                             <button onClick={() => handleDelete(item._id)} className='btn-danger ms-3'>Delete</button></li>
                         <hr />
 
